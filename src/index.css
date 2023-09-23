@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+html,body{
+  @apply w-full h-full m-0  p-0;
+}
+
+body{
+  @apply flex justify-center items-center bg-gray-200;
+}
+
+.nav-list{
+  @apply flex flex-col py-8 pl-2 items-center gap-4
+}
+
+.nav-list li{
+  @apply flex w-full gap-4 items-center py-2
+}
+
+.ring-charts{
+  @apply pb-14 w-full flex p-4 !relative
+}
+.ring-charts li{
+  @apply flex flex-col items-center w-full px-6;
+}
+
+.ring-charts label{
+  @apply text-sm w-full text-gray-600/60 py-2 absolute bottom-5
+
+}
+
+.progress-bar{
+  @apply w-[6rem] h-[6rem]
+}
+
+
+
+.linear-charts{
+  @apply pt-8 flex flex-col gap-6 
+}
+
+.linear-charts li{
+  @apply py-4 relative w-full
+}
+
+.linear-charts label{
+  @apply  absolute text-sm -top-3 left-0 text-gray-600
+}
+.linear-charts p{
+  @apply text-gray-600 absolute right-1 
+}
+
+#A .CircularProgressbar-path, #A .CircularProgressbar{
+  @apply !stroke-[#5F27CD]
+}
+#B .CircularProgressbar-path, #B .CircularProgressbar{
+  @apply !stroke-[#16C098]
+}
+
+#C .CircularProgressbar-path, #C .CircularProgressbar{
+  @apply !stroke-[#FF6B6B]
+}
+
+#D .MuiLinearProgress-bar1Determinate{
+  @apply !bg-[#16C098] 
+}
+
+.MuiLinearProgress-root{
+  @apply !h-2 rounded-full 
+}
+
+#E .MuiLinearProgress-bar1Determinate{
+  @apply !bg-[#FF6B6B]
+}
