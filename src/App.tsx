@@ -12,7 +12,7 @@ import Table from "./components/Table";
 
 function App() {
   return (
-    <MantineProvider>
+    <>
       <nav className="h-full rounded-s-2xl bg-white p-6 w-[17.5rem]">
         <header className="w-full  ">
           <img src={zag} className="pl-10 object-cover" />
@@ -42,7 +42,7 @@ function App() {
         <Charts />
         <Table />
       </main>
-    </MantineProvider>
+    </>
   );
 }
 

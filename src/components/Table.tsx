@@ -10,7 +10,7 @@ import {
   TableBody,
   Pagination,
 } from "@mui/material";
-import { Fragment, useEffect, useRef, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { BiSearch } from "react-icons/bi";
 
 import { data } from "../lib/dataset";
@@ -18,9 +18,16 @@ import { data } from "../lib/dataset";
 type SortTypes = "Newest" | "Oldest" | "Country";
 
 export default function dataTable() {
+  //following states required for the table:
+  // sorting options
+  // pagination state for both showing visibility to a specific range of data as well as showing which page
+  //tableData required for searching and sorting.
+
   const [sortOption, setSortOption] = useState<SortTypes>("Newest");
   const [page, setPage] = useState<number>(1);
   const [tableData, setTableData] = useState(data);
+
+  // useEffect required as changes in table data comes as a side effect of changing the sort option.
 
   useEffect(() => {
     if (sortOption === "Country") {
@@ -46,6 +53,7 @@ export default function dataTable() {
     }
   }, [sortOption]);
 
+  //function for filtering the data on searching
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     let search = e.target.value;
     setTableData(

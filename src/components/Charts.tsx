@@ -5,10 +5,15 @@ import { data } from "../lib/dataset";
 import { LinearProgress } from "@mui/material";
 
 export default function Charts() {
+  //chart variables
   let newCustomers = 0;
   let currentCustomers = 0;
   let satisfiedCustomers = 0;
   let active = 0;
+
+  //New Customers are customer from the year 2022 onwards
+  // Current Customer are all the customer from 2018 onwards;
+  // range of years span from 2010-2023;
 
   data.forEach((item) => {
     let date = new Date(item.joinDate);
